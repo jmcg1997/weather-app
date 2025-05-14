@@ -63,7 +63,7 @@ export default function App() {
   }, [unit]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br items-center from-slate-300 to-slate-500 pt-10">
+    <div className="min-w-[550px] min-h-screen flex flex-col justify-between bg-gradient-to-br items-center from-slate-300 to-slate-500 pt-10">
       <main className="flex flex-col items-center justify-center w-full max-w-3xl">
 
         {/* App title */}
