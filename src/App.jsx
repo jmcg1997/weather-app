@@ -63,34 +63,35 @@ export default function App() {
   }, [unit]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-300 to-slate-500 flex flex-col items-center justify-start pt-10 px-6 md:px-10">
+    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br items-center from-slate-300 to-slate-500 md:pt-10">
+      <main className="flex flex-col items-center justify-center w-full max-w-3xl">
 
-      {/* App title */}
-      <h1 className="text-3xl font-bold mb-6 text-blue-900">🌦️ Weather App</h1>
+        {/* App title */}
+        <h1 className="text-3xl font-bold mb-6 text-blue-900">🌦️ Weather App</h1>
 
-      {/* Search bar */}
-      <SearchBar onSearch={fetchWeather} loading={loading} hasError={!!error} />
-      
-      {/* Unit toggle */}
-      <UnitToggle unit={unit} onToggle={() => setUnit(unit === "metric" ? "imperial" : "metric")} />
+        {/* Search bar */}
+        <SearchBar onSearch={fetchWeather} loading={loading} hasError={!!error} />
 
-      {/* Loader and error message */}
-      {loading && <Loader />}
+        {/* Unit toggle */}
+        <UnitToggle unit={unit} onToggle={() => setUnit(unit === "metric" ? "imperial" : "metric")} />
 
-      {error && !loading && (
-        <div className="text-red-600 font-medium mt-4">{error}</div>
-      )}
-      {/* Weather display */}
-      {weather && !loading && (
-        <WeatherDisplay weather={weather} unit={unit} />
-      )}
-      {!weather && !forecast.length && <EmptyState />}
+        {/* Loader and error message */}
+        {loading && <Loader />}
 
-      {/* 5-day Forecast */}
-      {forecast.length > 0 && !loading && (
-        <Forecast forecastData={forecast} unit={unit} />
-      )}
+        {error && !loading && (
+          <div className="text-red-600 font-medium mt-4">{error}</div>
+        )}
+        {/* Weather display */}
+        {weather && !loading && (
+          <WeatherDisplay weather={weather} unit={unit} />
+        )}
+        {!weather && !forecast.length && <EmptyState />}
 
+        {/* 5-day Forecast */}
+        {forecast.length > 0 && !loading && (
+          <Forecast forecastData={forecast} unit={unit} />
+        )}
+      </main>
       {/* Footer */}
       <Footer />
     </div>
