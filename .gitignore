@@ -33,7 +33,6 @@ dist-ssr/
 *.sw?
 
 # Optional: ignore screenshots or temporary backups
-*.png
 *.jpg
 *.jpeg
 *.webp
