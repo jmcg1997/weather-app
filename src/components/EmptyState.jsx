@@ -4,7 +4,7 @@ import cityAnimation from "../assets/animations/city.json";
 
 export default function EmptyState() {
   return (
-    <div className="flex flex-col items-center justify-center mt-10 mb-40">
+    <div className="flex flex-col items-center justify-center mt-10 mb-4">
       <Lottie
         animationData={introAnimation}
         autoplay
